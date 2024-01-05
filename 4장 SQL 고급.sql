@@ -271,8 +271,11 @@ select a.uid, a.name, a.pos, b.name from member as a join department b where a.d
 select sum(b.sale) from member as a join sales b where a.uid = b.uid and a.name = '김유신' and b.year = 2019;
 
 # 실습 4-17
-select * from sales group by uid having year = 2019 and sale >= 50000;
-
-# 실습 4-1
-# 실습 4-1
-# 실습 4-1
+select b.name as '직원명', c.name as '부서명', b.pos as '직급', a.year as '년도', sum(sale) as '매출합'
+from sales as a 
+join member as b on a.uid = b.uid 
+join department c on b.dep = c.depno 
+where year = 2019 and sale >= 50000
+group by a.uid
+having sum(sale) >= 10000
+order by sum(sale) desc;
