@@ -189,7 +189,7 @@ set city_name = '서울';
 update city_popul
 set population = population / 10000;
 select * from city_popul limit 5;
-delete from city_popul
+delete from city_populcustomercustomer
 where city_name like 'New%';
 # p150
 delete from city_popul
@@ -201,3 +201,13 @@ create user 'college'@'%' identified by '1234';
 grant all privileges on college.*to 'college'@'%';
 grant all privileges on college.*to 'sysh58'@'%';
 flush privileges;
+
+create database `bookstore`;
+create user 'bookstore'@'%' identified by '1234';
+grant all privileges on college.*to 'bookstore'@'%';
+grant all privileges on college.*to 'sysh58'@'%';
+flush privileges;
+use new_schema1;
+drop table `customer`;
+drop table `product`;
+drop table `order`;
