@@ -133,6 +133,7 @@ where c.`price` = 20000;
 # 4-40
 select b.`name`, a.`saleprice` from `order` as a
 right join `customer` as b on a.`custid` = b.`custid`;
+select * from `customer`;
 # 4-41
 select sum(`saleprice`) as '총매출' from `order` as a
 join `customer` as b on a.`custid` = b.`custid`
@@ -147,8 +148,8 @@ where `saleprice` is null;
 insert into `book` values(11,'스포츠의학','한솔의학서적',null);
 select * from `book`;
 # 4-45
-update `customer` set `address` = '대한민국 부산' where `custid` = 5;
+update `customer` set `address` = '대한민국 부산' where `custid` = 6;
 select * from `customer`;
 # 4-46
-delete from `customer` where `custid` = 5;
+delete from `customer` where `custid` = 6;
 select * from `customer`;
